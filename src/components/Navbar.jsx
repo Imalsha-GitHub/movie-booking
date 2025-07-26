@@ -1,8 +1,8 @@
+import { useClerk, UserButton, useUser } from '@clerk/clerk-react'
 import { MenuIcon, SearchIcon, TicketPlus, XIcon } from 'lucide-react'
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { assets } from '../assets/assets'
-import { useClerk, UserButton, useUser } from '@clerk/clerk-react'
 
 
 const Navbar = () => {
@@ -24,11 +24,11 @@ const Navbar = () => {
 
         <XIcon className='md:hidden absolute top-6 right-6 w-6 h-6 cursor pointer' onClick={()=> setIsOpen(!isOpen)}/>
 
-        <Link onClick={()=> {scrollTo(0,0), setIsOpen(false)}} to='/'>Home</Link>
-        <Link onClick={()=> {scrollTo(0,0), setIsOpen(false)}} to='/movies'>Movies</Link>
-        <Link onClick={()=> {scrollTo(0,0), setIsOpen(false)}} to='/theaters'>Theaters</Link>
-        <Link onClick={()=> {scrollTo(0,0), setIsOpen(false)}} to='/releases'>Releases</Link>
-        <Link onClick={()=> {scrollTo(0,0), setIsOpen(false)}} to='/favorite'>Favourites</Link>
+        <Link onClick={()=> {scrollTo(0,0); setIsOpen(false)}} to='/'>Home</Link>
+        <Link onClick={()=> {scrollTo(0,0); setIsOpen(false)}} to='/movies'>Movies</Link>
+        <Link onClick={()=> {scrollTo(0,0); setIsOpen(false)}} to='/theaters'>Theaters</Link>
+        <Link onClick={()=> {scrollTo(0,0); setIsOpen(false)}} to='/releases'>Releases</Link>
+        <Link onClick={()=> {scrollTo(0,0); setIsOpen(false)}} to='/favorite'>Favourites</Link>
       </div>
 
       <div className="flex items-center gap-8">
