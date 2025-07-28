@@ -1,8 +1,8 @@
 import { ChartLineIcon, CircleDollarSignIcon, PlayCircleIcon, UsersIcon } from 'lucide-react';
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 import { dummyDashboardData } from '../../assets/assets';
 import Loading from '../../components/Loading';
-
+import Title from '../../components/admin/Title';
 
 const Dashboard = () => {
 
@@ -20,7 +20,8 @@ const Dashboard = () => {
   const dashboardCards = [
     {title: "Total Bookings", value: dashboardData.totalBookings || "0", icon: ChartLineIcon},
     {title: "Total Revenue", value: dashboardData.totalRevenue || "0", icon: CircleDollarSignIcon},
-    {title: "Active Shows", value: dashboardData.activeShows.length || "0", icon: PlayCircleIcon},
+    // {title: "Active Shows", value: dashboardData.totalMovies.length || "0", icon: PlayCircleIcon},
+    {title: "Active Shows", value: Array.isArray(dashboardData.totalMovies) ? dashboardData.totalMovies.length : "0", icon: PlayCircleIcon},
     {title: "Total Users", value: dashboardData.totalUsers || "0", icon: UsersIcon},
 
   ]
@@ -35,9 +36,9 @@ const Dashboard = () => {
   }, []);
 
   return !loading ? (
-    <div>
-
-    </div>
+    <>
+      <Title text1="Admin" text2="Dashboard"/>
+    </>
   ) : <Loading/>
 }
 
