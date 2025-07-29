@@ -24,6 +24,4 @@ app.get('/', (req, res) => res.send("iMovie Backend Server is running"));
 app.use('/api/inngest', serve({client: inngest, functions}))
 
 // starts Express server, making it listen for incoming HTTP requests on the specified port
-// app.listen(port, () => console.log(`Server is listening at http://localhost:${port}`));
-
-app.use('/api/inngest', serve({client: inngest, functions}))
+app.listen(port, () => console.log(`Server is listening at http://localhost:${port}`));
